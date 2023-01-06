@@ -1,0 +1,230 @@
+main {
+    font-family: sans-serif;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-areas:
+        "a a"
+        "b b"
+        "c e"
+        "g g";
+
+    grid-template-rows: 130px 80px auto 100px;
+    grid-template-columns: 4fr 2fr;
+}
+
+html {
+    background-color: #031a00;
+}
+
+@font-face {
+    font-family: "iot";
+    src: url('../fuentes/techno_2/Techno.ttf')
+}
+
+body {
+    min-width: 1000px;
+    overflow: scroll;
+    height: 100%;
+}
+
+.cabecera {
+    grid-area: a;
+}
+
+.menu {
+    border-radius: 10px;
+    grid-area: b;
+    margin-top: 6px;
+    background-image: url(/imagenes/fondo.webp);
+    background-size: cover;
+    min-width: 900px;
+}
+
+.menu li {
+    border-radius: 10px;
+    display: inline-block;
+    list-style: none;
+    font-family: "iot";
+}
+
+.datosdelejercicio {
+    grid-area: c;
+    height: 250px;
+}
+
+.cajamapa {
+    grid-column: e;
+    margin-left: 5%;
+}
+
+
+.pie {
+    grid-area: g;
+    margin-top: 120px;
+    text-align: center;
+}
+
+h3 {
+    padding: 3px;
+    border-radius: 10px;
+    font-family: "iot";
+    background-image: url(/imagenes/fondo.webp);
+    background-size: cover;
+    color: #1ace32;
+    padding-left: 10%;
+}
+
+fieldset {
+    border-radius: 10px;
+    background-image: url(/imagenes/fondo.webp);
+    background-size: cover;
+    min-height: 270px;
+    min-width: 730px;
+}
+
+header {
+    align-items: center;
+}
+
+footer {
+    border-radius: 10px;
+    width: 93.5%;
+    position: absolute;
+    bottom: 10px;
+    color: #1ace32;
+    background-image: url(/imagenes/fondo.webp);
+    background-size: cover;
+    font-family: "iot";
+}
+
+#titulo {
+    min-width: 70%;
+    display: inline;
+    margin-left: 2%;
+    vertical-align: bottom;
+    font-size: 84px;
+    font-family: "iot";
+    position: absolute;
+    top: -20px;
+    color: #1ace32;
+}
+
+
+/* clase que se aplica al div que contiene el mapa de Google Maps*/
+#map_canvas {
+    border-radius: 10px;
+    height: 100%;
+    color: #1ace32;
+    background-color: #1ace32;
+}
+
+/* Menu  Ventana normal*/
+li:hover {
+    filter: brightness(150%);
+    background-color: rgb(20, 20, 20);
+    border-radius: 7px;
+    border-bottom: 7px solid #1ace32;
+    padding-bottom: 3px;
+    box-shadow: 5px 5px 5px 5px #1ace32;
+    cursor: pointer;
+}
+
+li:hover > input {
+    background-color: #1ace32;
+    color: black;
+    cursor: pointer;
+}
+
+
+li {
+    background-color: #1ace32;
+    list-style: none;
+    display: inline;
+    padding: 1px 10px 10px 10px;
+    font-size: 20px;
+    margin-left: 5px;
+    transition: border-bottom 100ms;
+    cursor: pointer;
+}
+
+
+
+/*               Formulario responsive*/
+.col-25 {
+    float: left;
+    width: 20%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 80%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+#instrucciones {
+    min-width: 1000px;
+    position: absolute;
+    bottom: 20px;
+    width: 93.5%;
+    border: 5px black;
+}
+
+#instrucciones p {
+    min-width: 1000px;
+    font-family: "iot";
+    font-size: 16px;
+    color: #1ace32;
+    background-image: url(/imagenes/fondo.webp);
+    background-size: cover;
+    border-radius: 10px;
+}
+
+#instrucciones h3 {
+    padding-left: 7%;
+}
+
+img {
+    width: 200px;
+    height: 130px;
+}
+
+li input {
+    font-family: "iot";
+    color: #1ace32;
+    border-radius: 10px;
+}
+
+label {
+    padding: 2px;
+    font-family: "iot";
+    color: #1ace32;
+    background-color: rgb(17, 17, 17);
+}
+
+input {
+    border-radius: 10px;
+    background-color: black;
+    color: #1ace32;
+}
+
+select {
+    border-radius: 10px;
+    background-color: black;
+    color: #1ace32;
+}
+
+#direccionMapa {
+    padding: 3px;
+    font-family: "iot";
+    color: #1ace32;
+    background-image: url(/imagenes/fondo.webp);
+    background-size: cover;
+    border-radius: 10px;
+}
+
+b {
+    color: white;
+}

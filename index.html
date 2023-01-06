@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Dispositivos IOT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- MATERIAL DESINg-->
+  <link rel="stylesheet" href="./css/estilo.css">
+  <!-- Edito html para text area -->
+  <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+  <!-- Mensajes al usuario-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+</head>
+
+
+<body>
+  <main>
+
+    <header class="cabecera">
+      <picture style="margin: 10px;">
+        <source srcset="imagenes/iot.jpg">
+        <img id="imagenTitulo" src="imagenes/iot.jpg" alt="Logo CIFP">
+      </picture>
+      <h1 id="titulo">Dispositivos_IOT</h1>
+    </header>
+
+
+    <article class="menu">
+      <ul>
+        <li>
+          <input type="button" id="grabarRegistro" title="Boton Derecho Nuevo" value="Nuevo Registro" />
+        </li>
+        <li>
+          <input type="button" id="borrarRegistro" value="Borrar Registro" />
+        </li>
+
+        
+        <li>
+          <a href="http://www.informaticasc.com/curso22_23/mikel/pdf/ListadoElementosUrbanos.php">Pdf</a>
+        </li>
+
+        <li>
+          <input type="button" id="bSiguiente" value="Siguiente" />
+        </li>
+        <li>
+          <input type="button" id="bAnterior" value="Anterior" />
+        </li>
+
+
+        <li>
+          <input type="button" id="visuPrimero" value="Primer Registro" />
+        </li>
+        <li>
+          <input type="button" id="visuUltimo" value="Ultimo Registro" />
+        </li>
+
+      </ul>
+    </article>
+
+
+    <article aria-label="Datos elemento" class="datosdelejercicio">
+      <header>
+        <h3>
+          Datos dispositivo
+        </h3>
+      </header>
+      <fieldset>
+        <div class="container">
+          <form id="formulario" class="formulario" method="post">
+            <div class="row">
+              <div class="col-25">
+                <label for="cId">Id disp.</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="cId" name="cId" value="0" style="width:60px">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="cTipo">Tipo disp.</label>
+              </div>
+              <div class="col-75">
+                <select id="cTipo" name="cTipo" type="text" style="width:100px">
+                  <option value="Alcantarilla">Alcantarilla</option>
+                  <option value="Farola">Farola</option>
+                  <option value="Papelera">Papelera</option>
+                  <option value="Jardin">Jardin</option>
+                  <option value="Datos">Datos</option>
+                  <option value="Eléctrica">Eléctrica</option>
+                  <option value="Gas">Gas</option>
+                  <option value="Agua limpia">Agua limpia</option>
+                  <option value="Agua sucia">Agua sucia</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="cCantidad">Dano (0 - 100) %</label>
+              </div>
+              <div class="col-75">
+                <input type="number" id="cCantidad" name="cCantidad" placeholder="0 - 100" min="0" max="100">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="cHora">Hora aviso</label>
+              </div>
+              <div class="col-75">
+                <input type="time" id="cHora" name="cHora">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="cFecha">Fecha aviso</label>
+              </div>
+              <div class="col-75">
+                <input type="date" id="cFecha" name="cFecha">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="cLatitud">Latitud disp.</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="cLatitud" name="cLatitud" placeholder="Pinchar en el mapa" disabled>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="cLongitud">Longitud disp.</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="cLongitud" name="cLongitud" placeholder="Pinchar en el mapa" disabled>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="cDireccion">Direccion disp.</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="cDireccion" name="cDireccion" placeholder="Pinchar en el mapa"
+                  style="width:400px" disabled>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="cDescripcion">Cercania</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="cDescripcion" name="cDescripcion" placeholder="Pinchar en el mapa" disabled>
+              </div>
+            </div>
+          </form>
+        </div>
+      </fieldset>
+    </article>
+
+    <article class="cajamapa">
+      <header>
+        <h3>
+          Mapa
+        </h3>
+      </header>
+      <div class="map_canvas" id="map_canvas">
+      </div>
+      <h5 id="direccionMapa">
+      </h5>
+    </article>
+
+    <div id="instrucciones">
+      <h3>Funcionamiento dispositivos IOT</h3>
+      <p>Dispositivos IOT es una herramienta para facilitar el trabajo a los operarios de mantenimiento del
+        ayuntamiento.
+        <b>Funcionamiento:</b> Cuando un dispositivo detecta que un elemento urbano falla o esta roto el protocolo
+        establece
+        que
+        el operario debe registrar el aviso, en los campos de arriba debe rellenar <b>Tipo</b>, cantidad de <b>Dano</b>
+        recibido en el
+        elemento,<b> Hora</b> de aviso y <b>Fecha</b> de aviso, los campos <b>Latitud</b>, <b>Longitud</b>,
+      <b>Direccion</b> y <b>Cercania</b> se rellenan solos
+        pinchando en el mapa. <b>Cercania</b> es la distancia en metros desde el punto donde nos encontramos hasta el
+        dispositivo. Para <b>modificar</b> un registro basta con seleccionarlo y cambiar los campos salvo el <b>id.</b>
+      </p>
+    </div>
+
+    <footer class="pie">
+      Mikel Bermejo Jorge &copy; Desarrollo de Aplicaciones Web (<cite>DAW</cite>)
+    </footer>
+
+  </main>
+</body>
+<script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeNRBEIWYeWRRvY8On_9pkSD1_J_zLykQ&libraries=geometry">
+  </script>
+</script>
+<script src="./js/funciones.js"></script>
+<script src="./js/bd.js"></script>
+
+</html>
